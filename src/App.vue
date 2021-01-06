@@ -4,6 +4,7 @@
       <b-navbar-brand>Japari Casino</b-navbar-brand>
 
       <b-navbar-nav>
+        <b-nav-item href="#/SimpleGame">Simple Game</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
 
