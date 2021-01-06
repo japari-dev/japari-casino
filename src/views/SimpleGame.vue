@@ -9,6 +9,9 @@
     </b-input-group>
 
     <b-button v-on:click="play" variant="primary">Play</b-button>
+    <b-button v-on:click="charge" variant="primary"
+      >Give me more cash!</b-button
+    >
 
     <div v-if="win != null">
       <b-alert v-if="win" variant="success" show>You win!</b-alert>
@@ -46,6 +49,9 @@ export default {
       }
 
       this.bet = 0
+    },
+    charge: function () {
+      this.total += 1000000
     }
   }
 
