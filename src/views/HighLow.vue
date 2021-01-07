@@ -52,8 +52,6 @@ export default {
       } else {
         this.win = false
       }
-
-      this.bet = 0
     },
     low: function () {
       this.total -= this.bet
@@ -67,8 +65,6 @@ export default {
       } else {
         this.win = false
       }
-
-      this.bet = 0
     }
   }
 }
