@@ -5,6 +5,7 @@
 
       <b-navbar-nav>
         <b-nav-item href="#/SimpleGame">Simple Game</b-nav-item>
+        <b-nav-item href="#/HighLow">High Low</b-nav-item>
       </b-navbar-nav>
     </b-navbar>
 
