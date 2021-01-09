@@ -14,6 +14,9 @@
     <div>
       <b-button v-on:click="high" variant="primary">High</b-button>
       <b-button v-on:click="low" variant="primary">Low</b-button>
+      <b-button v-on:click="charge" variant="primary"
+        >Give me more cash!</b-button
+      >
     </div>
 
     <div v-if="win != null">
@@ -65,6 +68,9 @@ export default {
       } else {
         this.win = false
       }
+    },
+    charge: function () {
+      this.total += 1000000
     }
   }
 }
