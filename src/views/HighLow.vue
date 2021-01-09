@@ -17,6 +17,9 @@
       <b-button v-on:click="charge" variant="primary"
         >Give me more cash!</b-button
       >
+      <b-button v-on:click="tokuseirei" variant="primary"
+        >Reset my fault</b-button
+      >
     </div>
 
     <div>
@@ -108,6 +111,9 @@ export default {
     },
     charge: function () {
       this.total += 1000000
+    },
+    tokuseirei: function () {
+      this.total = 100
     }
   }
 }
