@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <b-navbar type="dark" variant="info">
-      <b-navbar-brand><img src="./assets/logo.png" /></b-navbar-brand>
+      <b-navbar-brand
+        ><img src="./assets/logo.png" width="200pm"
+      /></b-navbar-brand>
 
       <b-navbar-nav>
         <b-nav-item href="#/SimpleGame">Simple Game</b-nav-item>
