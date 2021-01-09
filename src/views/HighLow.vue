@@ -41,7 +41,7 @@ export default {
   data: function () {
     return {
       total: 100,
-      bet: 0,
+      bet: 10,
       win: null,
       currentNumber: Math.floor(Math.random() * 13) + 1
     }
