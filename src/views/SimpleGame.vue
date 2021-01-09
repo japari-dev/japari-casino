@@ -26,7 +26,7 @@ export default {
   data: function () {
     return {
       total: 100,
-      bet: 0,
+      bet: 10,
       win: null
     }
   },
