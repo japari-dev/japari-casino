@@ -19,6 +19,15 @@
       >
     </div>
 
+    <div>
+      <b-button v-on:click="high_double" variant="primary"
+        >High (double)</b-button
+      >
+      <b-button v-on:click="low_double" variant="primary"
+        >Low (double)</b-button
+      >
+    </div>
+
     <div v-if="win != null">
       <b-alert v-if="win" variant="success" show>You win!</b-alert>
       <b-alert v-else variant="danger" show>You lose..</b-alert>
@@ -57,6 +66,34 @@ export default {
       }
     },
     low: function () {
+      this.total -= this.bet
+
+      var prevNumber = this.currentNumber
+      this.currentNumber = Math.floor(Math.random() * 13) + 1
+
+      if (this.currentNumber < prevNumber) {
+        this.win = true
+        this.total += this.bet * 2
+      } else {
+        this.win = false
+      }
+    },
+    high_double: function () {
+      this.bet *= 2
+      this.total -= this.bet
+
+      var prevNumber = this.currentNumber
+      this.currentNumber = Math.floor(Math.random() * 13) + 1
+
+      if (this.currentNumber > prevNumber) {
+        this.win = true
+        this.total += this.bet * 2
+      } else {
+        this.win = false
+      }
+    },
+    low_double: function () {
+      this.bet *= 2
       this.total -= this.bet
 
       var prevNumber = this.currentNumber
