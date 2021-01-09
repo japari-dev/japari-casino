@@ -25,8 +25,8 @@ export default {
   name: 'SimpleGame',
   data: function () {
     return {
-      total: 10,
-      bet: 0,
+      total: 100,
+      bet: 10,
       win: null
     }
   },
