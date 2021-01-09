@@ -40,7 +40,7 @@ export default {
   name: 'HighLow',
   data: function () {
     return {
-      total: 10,
+      total: 100,
       bet: 0,
       win: null,
       currentNumber: Math.floor(Math.random() * 13) + 1
