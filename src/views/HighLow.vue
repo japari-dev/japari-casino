@@ -7,28 +7,18 @@
     <div>{{ currentNumber }}</div>
 
     <div>Your bet:</div>
-    <b-input-group prepend="$" append=".00">
-      <b-form-input v-model.number="bet" />
-    </b-input-group>
+    <AmountInput v-model="bet" />
 
     <div>
-      <b-button v-on:click="high" variant="primary">High</b-button>
-      <b-button v-on:click="low" variant="primary">Low</b-button>
-      <b-button v-on:click="charge" variant="primary"
-        >Give me more cash!</b-button
-      >
-      <b-button v-on:click="tokuseirei" variant="primary"
-        >Reset my fault</b-button
-      >
+      <Button v-on:click="high">High</Button>
+      <Button v-on:click="low">Low</Button>
+      <Button v-on:click="charge">Give me more cash!</Button>
+      <Button v-on:click="tokuseirei">Reset my fault</Button>
     </div>
 
     <div>
-      <b-button v-on:click="high_double" variant="primary"
-        >High (double)</b-button
-      >
-      <b-button v-on:click="low_double" variant="primary"
-        >Low (double)</b-button
-      >
+      <Button v-on:click="high_double">High (double)</Button>
+      <Button v-on:click="low_double">Low (double)</Button>
     </div>
 
     <div v-if="win != null">

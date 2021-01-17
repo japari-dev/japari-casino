@@ -4,17 +4,11 @@
     <div>${{ total_except_bet.toLocaleString() }}.00</div>
 
     <div>Your bet:</div>
-    <b-input-group prepend="$" append=".00">
-      <b-form-input v-model.number="bet" />
-    </b-input-group>
+    <AmountInput v-model="bet" />
 
-    <b-button v-on:click="play" variant="primary">Play</b-button>
-    <b-button v-on:click="charge" variant="primary"
-      >Give me more cash!</b-button
-    >
-    <b-button v-on:click="tokuseirei" variant="primary"
-      >Reset my fault</b-button
-    >
+    <Button v-on:click="play">Play</Button>
+    <Button v-on:click="charge">Give me more cash!</Button>
+    <Button v-on:click="tokuseirei">Reset my fault</Button>
 
     <div v-if="win != null">
       <b-alert v-if="win" variant="success" show>You win!</b-alert>
