@@ -7,9 +7,7 @@
     <div>{{ currentNumber }}</div>
 
     <div>Your bet:</div>
-    <b-input-group prepend="$" append=".00">
-      <b-form-input v-model.number="bet" />
-    </b-input-group>
+    <AmountInput v-model="bet" />
 
     <div>
       <Button v-on:click="high">High</Button>
