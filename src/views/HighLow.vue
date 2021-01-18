@@ -1,7 +1,7 @@
 <template>
   <div class="high-low">
     <div>Balance:</div>
-    <div>${{ total_except_bet.toLocaleString() }}.00</div>
+    <div>${{ balance_except_bet.toLocaleString() }}.00</div>
 
     <div>Current Number:</div>
     <div>{{ currentNumber }}</div>
@@ -30,77 +30,77 @@ export default {
   name: 'HighLow',
   data: function () {
     return {
-      total: 100,
+      balance: 100,
       bet: 10,
       win: null,
       currentNumber: Math.floor(Math.random() * 13) + 1
     }
   },
   computed: {
-    total_except_bet: function () {
-      return this.total - this.bet
+    balance_except_bet: function () {
+      return this.balance - this.bet
     }
   },
   methods: {
     high: function () {
-      this.total -= this.bet
+      this.balance -= this.bet
 
       var prevNumber = this.currentNumber
       this.currentNumber = Math.floor(Math.random() * 13) + 1
 
       if (this.currentNumber > prevNumber) {
         this.win = true
-        this.total += this.bet * 2
+        this.balance += this.bet * 2
       } else {
         this.win = false
       }
     },
     low: function () {
-      this.total -= this.bet
+      this.balance -= this.bet
 
       var prevNumber = this.currentNumber
       this.currentNumber = Math.floor(Math.random() * 13) + 1
 
       if (this.currentNumber < prevNumber) {
         this.win = true
-        this.total += this.bet * 2
+        this.balance += this.bet * 2
       } else {
         this.win = false
       }
     },
     high_double: function () {
       this.bet *= 2
-      this.total -= this.bet
+      this.balance -= this.bet
 
       var prevNumber = this.currentNumber
       this.currentNumber = Math.floor(Math.random() * 13) + 1
 
       if (this.currentNumber > prevNumber) {
         this.win = true
-        this.total += this.bet * 2
+        this.balance += this.bet * 2
       } else {
         this.win = false
       }
     },
     low_double: function () {
       this.bet *= 2
-      this.total -= this.bet
+      this.balance -= this.bet
 
       var prevNumber = this.currentNumber
       this.currentNumber = Math.floor(Math.random() * 13) + 1
 
       if (this.currentNumber < prevNumber) {
         this.win = true
-        this.total += this.bet * 2
+        this.balance += this.bet * 2
       } else {
         this.win = false
       }
     },
     charge: function () {
-      this.total += 1000000
+      this.balance += 1000000
     },
     tokuseirei: function () {
-      this.total = 100
+      this.balance = 100
     }
   }
 }

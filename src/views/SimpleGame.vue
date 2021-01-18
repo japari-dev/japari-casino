@@ -1,7 +1,7 @@
 <template>
   <div class="simple-game">
     <div>Balance:</div>
-    <div>${{ total_except_bet.toLocaleString() }}.00</div>
+    <div>${{ balance_except_bet.toLocaleString() }}.00</div>
 
     <div>Bet:</div>
     <AmountInput prepend="$" append=".00" v-model="bet" />
@@ -19,25 +19,25 @@ export default {
   name: 'SimpleGame',
   data: function () {
     return {
-      total: 100,
+      balance: 100,
       bet: 10,
       win: null
     }
   },
   computed: {
-    total_except_bet: function () {
-      return this.total - this.bet
+    balance_except_bet: function () {
+      return this.balance - this.bet
     }
   },
   methods: {
     play: function () {
-      this.total -= this.bet
+      this.balance -= this.bet
 
       var r = Math.floor(Math.random() * 2)
 
       if (r === 1) {
         this.win = true
-        this.total += this.bet * 2
+        this.balance += this.bet * 2
       } else {
         this.win = false
       }
@@ -45,10 +45,10 @@ export default {
       this.bet = 0
     },
     charge: function () {
-      this.total += 1000000
+      this.balance += 1000000
     },
     tokuseirei: function () {
-      this.total = 100
+      this.balance = 100
     }
   }
 
