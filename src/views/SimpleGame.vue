@@ -4,7 +4,7 @@
     <div>${{ total_except_bet.toLocaleString() }}.00</div>
 
     <div>Your bet:</div>
-    <AmountInput v-model="bet" />
+    <AmountInput prepend="$" append=".00" v-model="bet" />
 
     <Button v-on:click="play">Play</Button>
     <Button v-on:click="charge">Give me more cash!</Button>
