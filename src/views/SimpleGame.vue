@@ -10,10 +10,7 @@
     <Button v-on:click="charge">Give me more cash!</Button>
     <Button v-on:click="tokuseirei">Reset my fault</Button>
 
-    <div v-if="win != null">
-      <b-alert v-if="win" variant="success" show>You win!</b-alert>
-      <b-alert v-else variant="danger" show>You lose..</b-alert>
-    </div>
+    <WinLoseAlert v-bind:win="win" />
   </div>
 </template>
 
