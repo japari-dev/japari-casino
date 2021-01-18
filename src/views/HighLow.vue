@@ -7,7 +7,7 @@
     <div>{{ currentNumber }}</div>
 
     <div>Your bet:</div>
-    <AmountInput v-model="bet" />
+    <AmountInput prepend="$" append=".00" v-model="bet" />
 
     <div>
       <Button v-on:click="high">High</Button>
