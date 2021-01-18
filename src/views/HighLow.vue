@@ -1,12 +1,12 @@
 <template>
   <div class="high-low">
-    <div>Total:</div>
+    <div>Balance:</div>
     <div>${{ total_except_bet.toLocaleString() }}.00</div>
 
     <div>Current Number:</div>
     <div>{{ currentNumber }}</div>
 
-    <div>Your bet:</div>
+    <div>Bet:</div>
     <AmountInput prepend="$" append=".00" v-model="bet" />
 
     <div>

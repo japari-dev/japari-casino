@@ -1,9 +1,9 @@
 <template>
   <div class="simple-game">
-    <div>Total:</div>
+    <div>Balance:</div>
     <div>${{ total_except_bet.toLocaleString() }}.00</div>
 
-    <div>Your bet:</div>
+    <div>Bet:</div>
     <AmountInput prepend="$" append=".00" v-model="bet" />
 
     <Button v-on:click="play">Play</Button>
