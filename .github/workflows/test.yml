@@ -1,7 +1,10 @@
 name: test
 
 on:
-  - push
+  push:
+    branches:
+      - "!develop"
+      - "!master"
 
 jobs:
   lint:
