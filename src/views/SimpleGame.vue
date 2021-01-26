@@ -41,8 +41,6 @@ export default {
       } else {
         this.win = false
       }
-
-      this.bet = 0
     },
     charge: function () {
       this.balance += 1000000
