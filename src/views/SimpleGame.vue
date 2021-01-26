@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { rand } from '../utils/misc'
+
 export default {
   name: 'SimpleGame',
   data: function () {
@@ -33,7 +35,7 @@ export default {
     play: function () {
       this.balance -= this.bet
 
-      var r = Math.floor(Math.random() * 2)
+      var r = rand(2)
 
       if (r === 1) {
         this.win = true

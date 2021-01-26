@@ -26,6 +26,12 @@
 </template>
 
 <script>
+import { rand } from '../utils/misc'
+
+function getNumber () {
+  return rand(13) + 1
+}
+
 export default {
   name: 'HighLow',
   data: function () {
@@ -33,7 +39,7 @@ export default {
       balance: 100,
       bet: 10,
       win: null,
-      currentNumber: Math.floor(Math.random() * 13) + 1
+      currentNumber: getNumber()
     }
   },
   computed: {
@@ -46,7 +52,7 @@ export default {
       this.balance -= this.bet
 
       var prevNumber = this.currentNumber
-      this.currentNumber = Math.floor(Math.random() * 13) + 1
+      this.currentNumber = getNumber()
 
       if (this.currentNumber > prevNumber) {
         this.win = true
@@ -59,7 +65,7 @@ export default {
       this.balance -= this.bet
 
       var prevNumber = this.currentNumber
-      this.currentNumber = Math.floor(Math.random() * 13) + 1
+      this.currentNumber = getNumber()
 
       if (this.currentNumber < prevNumber) {
         this.win = true
@@ -73,7 +79,7 @@ export default {
       this.balance -= this.bet
 
       var prevNumber = this.currentNumber
-      this.currentNumber = Math.floor(Math.random() * 13) + 1
+      this.currentNumber = getNumber()
 
       if (this.currentNumber > prevNumber) {
         this.win = true
@@ -87,7 +93,7 @@ export default {
       this.balance -= this.bet
 
       var prevNumber = this.currentNumber
-      this.currentNumber = Math.floor(Math.random() * 13) + 1
+      this.currentNumber = getNumber()
 
       if (this.currentNumber < prevNumber) {
         this.win = true
