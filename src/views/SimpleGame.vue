@@ -51,7 +51,6 @@ export default {
       this.balance = 100
     }
   }
-
 }
 </script>
 
