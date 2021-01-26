@@ -5,8 +5,6 @@
         ><img src="./assets/logo.png" width="220pm"
       /></b-navbar-brand>
     </b-navbar>
-
-    <router-view />
   </div>
 </template>
 
