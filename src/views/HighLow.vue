@@ -49,53 +49,26 @@ export default {
   },
   methods: {
     high: function () {
-      this.balance -= this.bet
-
-      var prevNumber = this.currentNumber
-      this.currentNumber = getNumber()
-
-      if (this.currentNumber > prevNumber) {
-        this.win = true
-        this.balance += this.bet * 2
-      } else {
-        this.win = false
-      }
+      this.play((nw, prv) => nw > prv)
     },
     low: function () {
-      this.balance -= this.bet
-
-      var prevNumber = this.currentNumber
-      this.currentNumber = getNumber()
-
-      if (this.currentNumber < prevNumber) {
-        this.win = true
-        this.balance += this.bet * 2
-      } else {
-        this.win = false
-      }
+      this.play((nw, prv) => nw < prv)
     },
     high_double: function () {
       this.bet *= 2
-      this.balance -= this.bet
-
-      var prevNumber = this.currentNumber
-      this.currentNumber = getNumber()
-
-      if (this.currentNumber > prevNumber) {
-        this.win = true
-        this.balance += this.bet * 2
-      } else {
-        this.win = false
-      }
+      this.high()
     },
     low_double: function () {
       this.bet *= 2
+      this.low()
+    },
+    play: function (prediction) {
       this.balance -= this.bet
 
       var prevNumber = this.currentNumber
       this.currentNumber = getNumber()
 
-      if (this.currentNumber < prevNumber) {
+      if (prediction(this.currentNumber, prevNumber)) {
         this.win = true
         this.balance += this.bet * 2
       } else {
