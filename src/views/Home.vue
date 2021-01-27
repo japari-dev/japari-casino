@@ -16,7 +16,7 @@
       <b-row>
         <b-col>
           <div>Balance:</div>
-          <div>${{ balance_except_bet.toLocaleString() }}.00</div>
+          <div>${{ balanceExceptBet.toLocaleString() }}.00</div>
         </b-col>
         <b-col>
           <div>Bet:</div>
@@ -57,7 +57,7 @@ export default {
     }
   },
   computed: {
-    balance_except_bet: function () {
+    balanceExceptBet: function () {
       return this.balance - this.bet
     }
   },
