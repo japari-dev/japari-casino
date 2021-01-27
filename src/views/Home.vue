@@ -10,6 +10,9 @@
             <b-tab title="High Low">
               <HighLow v-bind:bet="bet" v-on:played="applyResult($event)" />
             </b-tab>
+            <b-tab title="Slot Machine">
+              <SlotMachine v-bind:bet="bet" v-on:played="applyResult($event)" />
+            </b-tab>
           </b-tabs>
         </b-col>
       </b-row>
@@ -42,12 +45,14 @@
 <script>
 import SimpleGame from '../components/games/SimpleGame'
 import HighLow from '../components/games/HighLow'
+import SlotMachine from '../components/games/SlotMachine'
 
 export default {
   name: 'Home',
   components: {
     SimpleGame: SimpleGame,
-    HighLow: HighLow
+    HighLow: HighLow,
+    SlotMachine: SlotMachine
   },
   data: function () {
     return {
